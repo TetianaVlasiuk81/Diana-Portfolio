@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery – Diana Vlasiuk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="../assets/images/logo/logo.jpg">
+        <span>Diana Vlasiuk</span>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="lang-switch">
+        <a href="../de/gallery.html">DE</a>
+        <a href="../en/gallery.html" class="active">EN</a>
+        <a href="../ua/gallery.html">UA</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    <section class="gallery">
+
+      <h1>Gallery</h1>
+
+      <!-- FILTERS -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pencil">Pencil</button>
+        <button class="filter-btn" data-filter="colorpencil">ColorPencils</button>
+        <button class="filter-btn" data-filter="paint">Paint</button>
+        <button class="filter-btn" data-filter="watercolor">Watercolor</button>
+        <button class="filter-btn" data-filter="tablet">Digital</button>
+        <button class="filter-btn" data-filter="photo">Photo</button>
+      </div>
+
+      <!-- IMAGES GRID -->
+        <div id="gallery-container" class="gallery-grid"></div>
+
+      <!-- LIGHTBOX -->
+      <div id="lightbox" class="lightbox">
+          <button class="nav prev" id="prevBtn">&#10094;</button>
+          <img id="lightbox-img" src="" alt="">
+          <button class="nav next" id="nextBtn">&#10095;</button>
+          <span class="close" id="closeBtn">&times;</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Diana Vlasiuk
+    </div>
+  </footer>
+
+  <script src="../assets/js/gallery.js"></script>
+  <!-- <script src="js/gallery.js"></script> -->
+
+</body>
+</html>

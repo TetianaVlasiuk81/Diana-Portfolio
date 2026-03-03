@@ -1,0 +1,439 @@
+/* ===============================
+   GLOBAL
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.header {
+  border-bottom: 1px solid #eee;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logo img {
+  height: clamp(40px, 4vw, 70px);
+  width: auto;
+  border-radius: 12px;
+}
+
+.big-logo img {
+  height: 40vh;
+  width: auto;
+  border-radius: 12px;
+}
+
+.nav-menu,
+.lang-switch {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-menu a,
+.lang-switch a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.nav-menu a.active,
+.lang-switch a.active {
+  color: #000;
+  font-weight: 600;
+}
+
+/* ===============================
+   HERO
+================================ */
+
+.hero {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
+.footer {
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ===============================
+   GALLERY
+================================ */
+
+.gallery h1 {
+  margin: 60px 0 30px;
+  text-align: center;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 8px 16px;
+  margin: 6px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* Responsive grid */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 80px;
+}
+
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Landscape support */
+
+.gallery-item.landscape {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .gallery-item.landscape {
+    grid-column: span 1;
+  }
+}
+
+/* ===============================
+   LIGHTBOX
+================================ */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 6px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.nav:hover,
+.close:hover {
+  opacity: 0.7;
+}
+
+/* ===== ABOUT PAGE ===== */
+.about-container {
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 0 20px;
+}
+
+/* ===== ABOUT HERO CORRECTIONS ===== */
+.about-hero {
+    text-align: center;
+    margin: 0px auto 30px;
+    padding-top: 0; 
+}
+
+.about-hero h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.about-intro {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Grid layout */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.about-card {
+    background: #f7f7f7;
+    padding: 5px 15px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.about-card h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #222;
+}
+
+.about-card p,
+.about-card li {
+    color: #555;
+    line-height: 1.6;
+}
+
+.about-card ul {
+    padding-left: 18px;
+}
+
+/* виділений блок */
+.highlight {
+    background: #eaeaea;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===============================
+   CONTACT PAGE – OPTIMIZED
+================================ */
+
+.contact-container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-hero h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* --- NEW GRID --- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 250px 2fr;
+  gap: 18px;
+}
+
+.photo-card {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.contact-grid > .contact-card:not(.photo-card) {
+  grid-column: 2;
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Cards */
+
+.contact-card {
+  background: #f7f7f7;
+  padding: 5px 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.contact-card h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.contact-card p,
+.contact-card li {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 4px 0;
+}
+
+.contact-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.contact-grid > .contact-card:nth-last-child(2),
+.contact-grid > .contact-card:last-child {
+  grid-column: span 1;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-card {
+    grid-row: auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-menu a,
+  .lang-switch a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+}
